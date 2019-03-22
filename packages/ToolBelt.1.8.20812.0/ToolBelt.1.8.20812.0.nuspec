@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ToolBelt</id>
+    <version>1.8.20812.0</version>
+    <title>ToolBelt</title>
+    <authors>jlyonsmith</authors>
+    <owners>jlyonsmith</owners>
+    <licenseUrl>http://github.com/jlyonsmith/ToolBelt/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>http://github.com/jlyonsmith/ToolBelt</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An extremely useful collection of utility classes.</description>
+    <summary />
+    <releaseNotes>This release adds more unit tests and minor bug fixes..</releaseNotes>
+    <copyright>Copyright (C) 2013 John Lyon-Smith</copyright>
+    <tags>utility path endian console localization commandline string extension mono osx linux</tags>
+  </metadata>
+</package>

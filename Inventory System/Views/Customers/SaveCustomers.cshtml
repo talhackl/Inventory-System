@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "SaveCustomers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create Customer</h2>
+<form id="customers" method="post">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name"  class="form-control" id="name"  />
+    </div>
+
+    <div class="form-group">
+        <label for="phoneno">PhoneNo</label>
+        <input type="text" name="phoneno"  id="phoneno" class="form-control" />
+    </div>
+
+    <div>
+        <label for="haveamount">Available Amount</label>
+        <input type="text" name="haveamount"  id="haveamount" class="form-control" />
+    </div>
+
+    <button class="btn btn-success js-submit" id="submit" type="submit" >Submit</button>
+</form>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+                                                //Self Defined Methods For Validation
+                        //For Name
+            jQuery.validator.addMethod("nameValidator", function (value, element) {
+                if (/^[a-zA-Z\s]+$/.test(value))
+                    return true;
+                else
+                    return false;
+
+            }, "Please Enter The Name And Correct Name");
+                        
+                        //For PhoneNo
+            jQuery.validator.addMethod("phoneNoValidator", function (value, element) {
+                if (/^[0-9]\d*$/.test(value))
+                    return true;
+                else
+                    return false;
+
+            }, "Number Must Be In Digits");
+
+
+                        //For HaveAmount
+            jQuery.validator.addMethod("haveAmountValidator", function (value, element) {
+                if (value > 0 && value < 95001)
+                    return true;
+                else
+                    return false;
+
+            }, "Amount Must Be Between 15000 To 95000");
+
+
+            $("#customers").validate({
+                                                //Rules For Validation Started
+                rules: {
+                    name: {
+                        required: true,
+                        nameValidator:true,
+                        normalizer: function (value) {
+                            return $.trim(value);
+                        }
+                    },
+                    phoneno: {
+                        required: true,
+                        phoneNoValidator: true,
+                        normalizer: function (value) {
+                            return $.trim(value);
+                        }
+                    },
+                    haveamount: {
+                        required: true,
+                        haveAmountValidator:true,
+                        normalizer: function (value) {
+                            return $.trim(value);
+                        }
+                    }
+
+                },
+
+                                                //Submit Function Started
+                submitHandler: function (customerDtos) {
+                    var customerDtos = {
+                        name: $("#name").val(),
+                        phoneNo: $("#phoneno").val(),
+                        haveAmount: $("#havaamount").val()
+                    };
+                    JSON.stringify(customerDtos);
+                    $.ajax({
+                        url: "/api/customers",
+                        method: "Post",
+                        data: customerDtos,
+                        success: function () {
+                            toastr.success("Data Added Successfully");
+                        },
+                        fail: function () {
+                            toastr.error("Error In Adding Data");
+                        }
+                    });
+                }
+            });
+                
+                
+           
+        });
+    </script>
+}
+

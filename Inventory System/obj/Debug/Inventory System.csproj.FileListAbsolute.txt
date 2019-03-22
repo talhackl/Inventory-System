@@ -1,0 +1,82 @@
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory System.csprojResolveAssemblyReference.cache
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Inventory System.dll.config
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Inventory System.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Inventory System.pdb
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Antlr3.Runtime.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\EntityFramework.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\EntityFramework.SqlServer.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.Security.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.Security.Google.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Web.Infrastructure.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Newtonsoft.Json.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Owin.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.Helpers.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.Mvc.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.Optimization.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.Razor.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.WebPages.Deployment.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.WebPages.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.WebPages.Razor.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\WebGrease.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.Helpers.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.Mvc.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.Optimization.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.Razor.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.WebPages.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.WebPages.Deployment.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.WebPages.Razor.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Newtonsoft.Json.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Antlr3.Runtime.pdb
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\EntityFramework.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\EntityFramework.SqlServer.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.Security.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.Security.Google.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory System.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory System.pdb
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory_System.Migrations.Products.resources
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory System.csproj.GenerateResource.Cache
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\AutoMapper.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Net.Http.Formatting.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.Http.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.Http.WebHost.dll
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\AutoMapper.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Net.Http.Formatting.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.Http.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\bin\System.Web.Http.WebHost.xml
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory_System.Migrations.ProductsDataAdd.resources
+c:\users\elvish\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory_System.Migrations.Customer.resources
+C:\Users\eLvisH\Documents\Visual Studio 2013\Projects\Inventory System\Inventory System\bin\Toast.exe
+C:\Users\eLvisH\Documents\Visual Studio 2013\Projects\Inventory System\Inventory System\bin\Toaster.dll
+C:\Users\eLvisH\Documents\Visual Studio 2013\Projects\Inventory System\Inventory System\bin\ToolBelt.dll
+C:\Users\eLvisH\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory_System.Migrations.CustomersDataAdder.resources
+C:\Users\eLvisH\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory_System.Migrations.Order.resources
+C:\Users\eLvisH\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory_System.Migrations.deleteorder.resources
+C:\Users\eLvisH\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory_System.Migrations.Orders.resources
+C:\Users\eLvisH\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory_System.Migrations.Ordersupdate.resources
+C:\Users\eLvisH\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory_System.Migrations.Categories.resources
+C:\Users\eLvisH\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory_System.Migrations.DataCateogory.resources
+C:\Users\eLvisH\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory_System.Migrations.Products_Update.resources
+C:\Users\eLvisH\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory_System.Migrations.Products_DataAdder.resources
+C:\Users\eLvisH\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory_System.Migrations.Products_DataAdder2.resources
+C:\Users\eLvisH\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory_System.Migrations.Seeding_Role.resources
+C:\Users\eLvisH\documents\visual studio 2013\Projects\Inventory System\Inventory System\obj\Debug\Inventory_System.Migrations.AddPhoneNoToIdentityUsers.resources

@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "GetOrders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetOrders</h2>
+<table class="table table-condensed" id="order">
+    <thead>
+        <tr>
+            <th>Order Date</th>
+            <th>Customer's Name</th>
+            <th>Products's Name</th>   
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts{
+@Scripts.Render("~/bundles/lib")
+    <script>
+        $(document).ready(function () {
+
+           var table= $("#order").DataTable({
+               ajax: {
+                   url: "/api/order",
+                   dataSrc:""
+               },
+               columns: [
+                   {
+                       data:"OrderDate"
+                   },
+                   {
+                       data: "Customers.Name",
+                   },
+                   {
+                       data:"Products.Name"
+                   }
+               ]
+           });//DataTable Functions..
+        });//document ended here.
+    </script>
+}

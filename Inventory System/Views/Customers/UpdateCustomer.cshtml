@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "UpdateCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UpdateCustomer</h2>
+
+<form id="customer">
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" id="name">
+    </div>
+
+    <div class="form-group">
+        <label for="phoneno">Phone No</label>
+        <input type="text" name="phoneno" id="phoneno" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="haveamount">Available Amount</label>
+        <input type="text" name="haveamount" class="form-control" id="haveamount" />
+    </div>
+
+    <button class="btn btn-success" type="submit" >Update</button>
+
+</form>
+
+@section scripts{
+    @Scripts.Render("~/bundles/lib")
+    <script>
+        $.ajax({
+            url: "/api/customers/"+$.cookie("updatecustomer"),
+            method: "GET",
+            success: function (data) {
+                $("#name").val(data.Name),
+                $("#phoneno").val(data.PhoneNo),
+                $("#haveamount").val(data.HaveAmount)
+                
+            }
+        });
+
+        $("#customer").submit(function (e) {
+            e.preventDefault();
+            var sendId = $.cookie("updatecustomer");
+            var customerDtos = {
+                Id:$.cookie("updatecustomer"),
+                Name: $("#name").val(),
+                PhoneNo: $("#phoneno").val(),
+                HaveAmount: $("#haveamount").val()
+            };
+            //console.log(customerDtos);
+            JSON.stringify(customerDtos);
+            $.ajax({
+                url:"/api/customers/"+sendId,
+                method:"PUT",
+                success:function(){
+                    toastr.success("Data Updated Successfully");
+                    $.cookie("updatecustomer", null);
+                },
+                fail:function(){
+                    toastr.error("Error In Updating Data");
+                }
+            });
+        });
+    </script>
+}

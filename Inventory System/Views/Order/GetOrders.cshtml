@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "GetOrders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetOrders</h2>
+<table class="table table-condensed" id="order">
+    <thead>
+        <tr>
+            <th>Order Date</th>
+            <th>Customer's Name</th>
+            <th>Products's Name</th>   
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<div style="margin-top:2%;">
+    <a href="~/Order/NewOrder" class="btn btn-primary">New Order</a>
+</div>
+
+@section scripts{
+@Scripts.Render("~/bundles/lib")
+    <script>
+        $(document).ready(function () {
+
+           var table= $("#order").DataTable({
+               ajax: {
+                   url: "/api/order",
+                   dataSrc:""
+               },
+               columns: [
+                   {
+                       data:"OrderDate"
+                   },
+                   {
+                       data: "Customers.Name",
+                   },
+                   {
+                       data:"Products.Name"
+                   },
+                   {
+                       data: "Id",
+                       render: function (data) {
+                           return "<button class='btn btn-danger js-detail' data-order-id=" + data + ">Delete</button>";
+                       }
+                   }
+               ]
+           });//DataTable Functions..
+
+           $("#order").on("click", ".js-detail", function () {
+               var button = $(this);
+               //alert(button.attr('data-order-id'));
+               bootbox.confirm("Are You Sure TO Delete", function (result) {
+                   if (result) {
+                       $.ajax({
+                           url: "/api/order/" + button.attr("data-order-id"),
+                           method: "Delete",
+                           success: function () {
+                               toastr.success("Order Deleted Successfully");
+                               location.reload();
+                           },
+                           fail: function () {
+                               toastr.error("Error In Deleting Record");
+                           }
+                       });// ajax ended here
+                   }
+               });//bootbox ended here
+              
+           });//click event of js-delete  ended here
+        });//document ended here.
+    </script>
+}

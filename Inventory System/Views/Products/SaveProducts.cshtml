@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewBag.Title = "SaveProducts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SaveProducts</h2>
+<form id="product" >
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name"  required id="name" data-rule-validname="true" class="form-control" />
+    </div> 
+    
+
+    <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="text" name="quantity" required class="form-control" id="quantity" />
+    </div>
+    
+    
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" name="price" required class="form-control" id="price" />
+    </div>
+
+    <div class="form-group">
+        <label for="category">Category</label>
+        <select id="category" class="form-control"></select>
+    </div>
+   <button id="submit" class="btn btn-success ">Submit</button>
+</form>
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+
+            $.ajax({
+                url: "/api/categories",
+                method: "GET",
+                dataType: 'json',
+                success: function (data) {
+                    for (var i = 0; i < 4; i++) {
+                        $('#category').append($('<option>', { value: data[i].Id, text: data[i].Name }));
+                    }
+                }
+            });
+            //Self Defined Methods For Validation
+
+
+
+            //For Name 
+            //jQuery.validator.addMethod("namevalidator", function (value, element) {
+            //    if (/^[a-zA-Z\s]+$/.test(value)) {
+            //        return true;
+            //    } else {
+            //        return false;
+            //    };
+            //}, "Only Chracters Allowed");
+
+            //For Quantity
+            jQuery.validator.addMethod("quantityvalidator", function (value, element) {
+                if (value > 0 && value <40)
+                    return true;
+                else
+                    return false;
+
+            }, "Only 40 Quantity Is Allowed");
+                            
+            //For Price
+            //Price Limit Validation
+            jQuery.validator.addMethod("priceLimitValidator", function (value, element) {
+                if (value > 0 && value < 100000)
+                    return true;
+                else
+                    return false;
+
+            }, "Price Must Be Between 10,000 To 1,00,000");
+            //Price Characters Validation
+            jQuery.validator.addMethod("priceDigitValidator", function (value, element) {
+                if (/^[1-9]\d*$/.test(value))
+                    return true;
+                else
+                    return false;
+
+            }, "Price Must Be In Digit");
+
+            //Rules Portion Of Validation Started
+
+            $("#product").validate({
+
+                rules: {
+                    name: {
+                        //namevalidator: true,
+                        normalizer: function (value) {
+                            return $.trim(value);
+                        }
+                        
+                    },
+                    quantity: {
+                        quantityvalidator:true,
+                        normalizer: function (value) {
+                            return $.trim(value);
+                        }
+                    },
+                    price: {
+                        priceLimitValidator: true,
+                        priceDigitValidator: true,
+                        normalizer: function (value) {
+                            return $.trim(value);
+                        }
+                    }
+                },
+                //For Category
+             
+
+
+
+
+
+
+
+                                                            //Submit Funciton Started
+                submitHandler: function (productDtos) {
+                    var productDtos = {
+                        name: $("#name").val(),
+                        quantity: $("#quantity").val(),
+                        price: $("#price").val(),
+                        categoriesId:$("#category").val()
+                    };
+                    JSON.stringify(productDtos);
+                    $.ajax({
+                        url: "/api/products",
+                        method: "Post",
+                        data: productDtos,
+                        success: function () {
+                            toastr.success("Data Added Successfully");
+                        },
+                        fail: function () {
+                            toastr.error("Error In Data Adding");
+                        }
+                    });
+                    //alert("form Submited");
+                  
+                }
+            });
+
+         
+        });
+    </script>
+}
+

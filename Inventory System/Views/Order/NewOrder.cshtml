@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "NewOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>NewOrder</h2>
+<form id="order">
+    <div class="form-group">
+        <label for="customer">Customer Name</label>
+
+        <div class="tt-container">
+            <input type="text" name="customer" id="customer" class="form-control" />
+        </div>
+        
+    </div>
+
+    <div class="form-group">
+        <label for="product">Products</label>
+
+        <div class="tt-container">
+            <input type="text" name="product" id="product" class="form-control" />
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group" id="ul-products"></ul>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            var orderDtos = {
+                productIds:[]
+            };
+
+            //For Customer
+            var customers = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('Name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: '/api/customers?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#customer').typeahead({
+                minLenght: 3,
+                highlight: true
+            }, {
+                name: 'Customers',
+                display: 'Name',
+                source: customers
+            }).on("typeahead:select", function (e, customer) {
+                orderDtos.customerId = customer.Id;
+                //alert(vm.customerId+"");
+            });
+
+
+
+            var products = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('Name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: '/api/products?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#product').typeahead({
+                minLenght: 3,
+                highlight: true
+            }, {
+                name: 'Products',
+                display: 'Name',
+                source: products
+            }).on("typeahead:select", function (e, product) {
+                $("#ul-products").append("<li class='list-group-item'>" + product.Name + "</li>");
+                $("#product").typeahead("val", "");
+                orderDtos.productIds.push(product.Id);
+                //alert("" + product.Id);
+            });
+
+            $("#order").submit(function (e) {
+                e.preventDefault();
+                JSON.stringify(orderDtos);
+                $.ajax({
+                    url: "/api/Order",
+                    method: "POST",
+                    data: orderDtos,
+                    success: function () {
+                        toastr.success("Data Added Successfully");
+                    },
+                    fail: function () {
+                        toastr.error("Error In Adding Data");
+                    }
+                });
+            });
+
+        });
+    </script>
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Toaster</id>
+    <version>2.1.10716.0</version>
+    <title>Toaster</title>
+    <authors>jlyonsmith</authors>
+    <owners>jlyonsmith</owners>
+    <licenseUrl>http://github.com/jlyonsmith/Toaster/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>http://github.com/jlyonsmith/Toaster</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A simple, low overhead unit test library for Mono.  It's is based on the API's from NUnit and MSTest.</description>
+    <summary />
+    <releaseNotes>This release is a minor bug fix release and rework of the NuGet package.</releaseNotes>
+    <copyright>Copyright (C) 2014 John Lyon-Smith</copyright>
+    <tags>test functional unit console mstest mono osx linux</tags>
+    <dependencies>
+      <dependency id="ToolBelt" version="1.8" />
+    </dependencies>
+  </metadata>
+</package>

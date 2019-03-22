@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "GetCustomers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table id="customers" class="table table-condensed" >
+   <thead>
+       <tr>
+           <th>Name</th>
+           <th>Phone No</th>
+           <th>Available Amount</th>
+           <th>Delete</th>
+           <th>Update</th>
+       </tr>
+   </thead>
+
+    <tbody></tbody>
+</table>
+
+<div style="margin-top:2%;">
+    <a href="~/customers/saveCustomers" class="btn btn-primary" >Enter New Customer</a>
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/lib")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            var table = $("#customers").DataTable({
+                ajax: {
+                    url: "/api/customers",
+                    dataSrc:""
+                },
+                columns: [
+                    {
+                        data:"Name"
+                    },
+                    {
+                        data:"PhoneNo"
+                    },
+                    {
+                        data:"HaveAmount"
+                    },
+                    {
+                        data: "Id",
+                        render: function (data) {
+                            return "<a class='btn btn-danger js-delete' data-delete-id="+data+">Delete</a>";
+                        }
+                    },
+                    {
+                        data: "Id",
+                        render: function (data) {
+                            return "<a class='btn btn-success js-update' data-update-id= " + data + ">Update</a>";
+                        }
+                    }
+
+                ]
+            });
+
+            $("#customers").on("click", ".js-delete", function () {
+                var button = $(this);
+                bootbox.confirm("Are You Sure To Delete", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/customers"+button.attr("data-update-id"),
+                            method: "Delete",
+                            success: function () {
+                                alert("Deleted Successfully");
+                                location.reload();
+                            },
+                        });
+                    }
+                });
+            });
+            $("#customers").on("click", ".js-update", function () {
+                var button = $(this);
+                var id = button.attr("data-update-id");
+                $.cookie("updatecustomer", id, { path: '/' });
+                alert($.cookie("updatecustomer"));
+                window.location.href = 'http://localhost:50638/customers/updatecustomer';
+            });
+        });
+    </script>
+}

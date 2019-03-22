@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "GetProducts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<table id="product" class="table table-condensed">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<div style="margin-top:1%;">
+    <a class="btn btn-primary" href="~/products/saveproducts">Enter New Product</a>
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/lib")
+    <script>
+        $(document).ready(function () {
+            
+            var table = $("#product").DataTable({
+                ajax: {
+                    url: "/api/products",
+                    dataSrc:""
+                },
+                columns: [
+                    {
+                        data: "Name",
+                       
+                    },
+                    {
+                        data:"Quantity"
+                    },
+                    {
+                        data:"Price"
+                    },
+                    {
+                        data:"Categories.Name"
+                    },
+                    {
+                        data: "Id",
+                        render: function (data) {
+                            return "<a  class='btn btn-danger js-delete' data-product-id=" + data + ">Delete</a>";
+                        }
+                    },
+                    {
+                        data: "Id",
+                        render: function (data) {
+                            
+                            return "<button  data-update-id=" + data + " class='btn btn-success js-update' >Update</button>";
+                        }
+                    }
+                ]
+            });
+            
+            $("#product").on("click", ".js-delete", function () {
+                var button = $(this);
+                
+                alert(""+button.attr("data-product-id"));
+                bootbox.confirm("Are You Sure TO Delete", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/products/"+button.attr("data-product-id"),
+                            method: "Delete",
+                            success: function () {
+                                location.reload();
+                            }
+                       })
+                    }
+                });
+            });
+            $("#product").on("click", ".js-update", function () {
+                var button=$(this);
+                $.cookie("getid", button.attr("data-update-id"));
+                window.location.href = 'http://localhost:50638/Products/updateproduct';
+                //alert($.cookie("getid"));
+            });
+
+        });
+    </script>
+}

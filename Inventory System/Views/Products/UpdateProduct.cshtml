@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "UpdateProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UpdateProduct</h2>
+
+<form id="updateproduct" >
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" required id="name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="text" required id="quantity" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" required id="price" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="category">Category Name</label>
+        <select id="category" class="form-control"></select>
+    </div>
+    
+    <button class="btn btn-success">Update</button>
+</form>
+@Scripts.Render("~/bundles/jqueryval")
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "/api/products/" + $.cookie("getid"),
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    $("#name").val(data.Name);
+                    $("#quantity").val(data.Quantity);
+                    $("#price").val(data.Price);             
+                }
+            });
+
+            $.ajax({
+                url: "/api/categories",
+                method: "GET",
+                dataType:'json',
+                success: function (data) {
+                    for (var i = 0; i < 4; i++) {
+                        $('#category').append($('<option>', { value: data[i].Id, text: data[i].Name }));
+                    }
+                }
+            });
+
+            $("#updateproduct").submit(function(e){
+
+                //submitHandler: function (productDtos) {
+                e.preventDefault();
+                //console.log($("#category").val());
+                    var productDtos = {
+                        id:$.cookie("getid"),
+                        name: $("#name").val(),
+                        quantity: $("#quantity").val(),
+                        price: $("#price").val(),
+                        categoriesId:$("#category").val()
+                    };
+                    JSON.stringify(productDtos);
+                    $.ajax({
+                        url: "/api/products/" + $.cookie("getid"),
+                        method: "PUt",
+                        data:productDtos,
+                        success: function () {
+                            toastr.success("Data Updated Successfully");
+                            $.cookie('getid', null);
+                            alert("After Success Cookie Is:::  "+$.cookie('getid'));
+                        },
+                        fail: function () {
+                            toastr.error("Error In Updating");
+                        }
+                    });
+                
+            });
+        });
+    </script>
+}
